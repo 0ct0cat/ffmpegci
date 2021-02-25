@@ -1,5 +1,5 @@
 # ffmpegci
-ci for android/ios and so on
+ci for android/ios/wasm and so on
 
 base on ijk ffmpeg build
 
@@ -11,3 +11,11 @@ set ANDROID_NDK env
 cd android
 
 ./compile-ffmpeg.sh all
+
+# wasm
+
+./init-wams.sh
+
+cd wasm
+
+./compile-ffmpeg.sh

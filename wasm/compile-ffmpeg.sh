@@ -3,6 +3,8 @@
 set -e
 set +x
 
+# stole from https://github.com/ffmpegwasm/ffmpeg.wasm-core and https://zhuanlan.zhihu.com/p/74287959
+
 ROOT=`pwd`
 EMSDK_HOME=$ROOT/tools/emsdk
 EM_CONFIG=$EMSDK_HOME/.emscripten

@@ -30,12 +30,15 @@ function pull_fork()
     echo "== pull ffmpeg fork $1 =="
     sh $TOOLS/pull-repo-ref.sh $FFMPEG_FORK android/ffmpeg-$1 ${FFMPEG_LOCAL_REPO}
     cd android/ffmpeg-$1
-    git checkout ${FFMPEG_COMMIT} -b dumy
+    if ! git show-ref -q --heads android; then
+        git checkout ${FFMPEG_COMMIT} -b android
+    fi
     cd -
 }
 
 echo "== pull ffmpeg dep =="
-echo "== there is maybe different deps of ffmpeg on platform == "
+echo "== dumy for pull ffmpeg dep =="
+echo "== there is maybe different deps of ffmpeg on platform =="
 
 pull_fork "armv7a"
 pull_fork "arm64"
